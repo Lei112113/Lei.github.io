@@ -255,6 +255,8 @@
       const net = $('.net')
       const art_btn = $('.art_btn')
       const art = $('.art_container')
+     
+
       net_btn.click(function () {
         net_btn.css('color', '')
         $(this).css('color', 'brown')
@@ -282,12 +284,7 @@
       type: "get",
       dataType: 'json',
       success: function (res) {
-        let data = res.records.location;
-        console.log('place', data[21].weatherElement[0].time[0].startTime);
-        console.log('place澎湖', data[19].weatherElement[2].time[0].parameter);
-        console.log('place澎湖', data[19].weatherElement[4].time[0].parameter);
-        console.log('place連江', data[21].weatherElement[2].time[0].parameter);
-        console.log('place連江', data[21].weatherElement[4].time[0].parameter);
+        let data = res.records.location;     
         console.log(res);
         $.each(res.records.location, function (key, value) {
           // console.log('key',key);
@@ -306,12 +303,16 @@
 
           $("tbody").children().remove();
           $.each(res.records.location, function (key, value) {
+            let con=value.weatherElement[0].time[i].parameter.parameterName  
+            let con_value=value.weatherElement[0].time[i].parameter.parameterValue
             $("tbody").append(`<tr>
                             <td>${key + 1}</td>
                             <td>${value.locationName}</td>
                             <td> ${value.weatherElement[0].time[i].startTime}</td>
                             <td>${value.weatherElement[2].time[i].parameter.parameterName}-
-                                ${value.weatherElement[4].time[i].parameter.parameterName}</td>
+                                ${value.weatherElement[4].time[i].parameter.parameterName}
+                                <img title="${con}" src="./img/img/day/${con_value}.svg" style="width:20px;height:20px;">
+                                </td>
                                 </tr>`)
 
             console.log('typeof', value.weatherElement[0].time[i].startTime);

@@ -150,8 +150,11 @@
 
       <button class="text-decoration-none btn btn-light  col-md-1 col-5 text-center webc1_btn net_btn"
         style="padding: 4px;">網頁設計丙級第一題</button>
-      <button class="text-decoration-none btn btn-light  col-md-1 col-5  text-center ms-2 calendar_btn net_btn"
+        <button class="text-decoration-none btn btn-light  col-md-1 col-5  text-center ms-2 calendar_btn net_btn"
         style="padding: 4px;">CALENDAR</button>
+        <button class="text-decoration-none btn btn-light  col-md-1 col-6  text-center ms-2 vote_btn net_btn"
+        style="padding: 4px;">LET's Vote</button>
+
       <div class="col-md-4"></div>
     </div>
     <div class="row justify-content-center mt-3 ">
@@ -162,6 +165,10 @@
       <div class="col-md-7 col-6 calendar net_container">
         <a href="http://220.128.133.15/s1110401/php-calendar-Lei112113/index.php" style="display: none;" class="calendar ms-5 net"><img
             src="./img/calendar.png" alt="萬年曆" style="width:50vw"></a>
+      </div>
+      <div class="col-md-7 col-6 calendar net_container">
+        <a href="http://220.128.133.15/s1110401/php-survey-Lei112113/" style="display: none;" class="vote ms-5 net"><img
+            src="./img/vote.png" alt="LET's Vote" style="width:50vw"></a>
       </div>
 
     </div>
@@ -255,8 +262,6 @@
       const net = $('.net')
       const art_btn = $('.art_btn')
       const art = $('.art_container')
-     
-
       net_btn.click(function () {
         net_btn.css('color', '')
         $(this).css('color', 'brown')
@@ -284,7 +289,12 @@
       type: "get",
       dataType: 'json',
       success: function (res) {
-        let data = res.records.location;     
+        let data = res.records.location;
+        console.log('place', data[21].weatherElement[0].time[0].startTime);
+        console.log('place澎湖', data[19].weatherElement[2].time[0].parameter);
+        console.log('place澎湖', data[19].weatherElement[4].time[0].parameter);
+        console.log('place連江', data[21].weatherElement[2].time[0].parameter);
+        console.log('place連江', data[21].weatherElement[4].time[0].parameter);
         console.log(res);
         $.each(res.records.location, function (key, value) {
           // console.log('key',key);
@@ -303,16 +313,12 @@
 
           $("tbody").children().remove();
           $.each(res.records.location, function (key, value) {
-            let con=value.weatherElement[0].time[i].parameter.parameterName  
-            let con_value=value.weatherElement[0].time[i].parameter.parameterValue
             $("tbody").append(`<tr>
                             <td>${key + 1}</td>
                             <td>${value.locationName}</td>
                             <td> ${value.weatherElement[0].time[i].startTime}</td>
                             <td>${value.weatherElement[2].time[i].parameter.parameterName}-
-                                ${value.weatherElement[4].time[i].parameter.parameterName}
-                                <img title="${con}" src="./img/img/day/${con_value}.svg" style="width:20px;height:20px;">
-                                </td>
+                                ${value.weatherElement[4].time[i].parameter.parameterName}</td>
                                 </tr>`)
 
             console.log('typeof', value.weatherElement[0].time[i].startTime);

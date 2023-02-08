@@ -211,10 +211,6 @@
       net_btn_fun(0)
     })
 
-    $('#btn').click(function () {
-      console.log('btn');
-      window.print();
-    })
     // ajax
     $.ajax({
       // url: "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=rdec-key-123-45678-011121314",
@@ -223,12 +219,7 @@
       dataType: 'json',
       success: function (res) {
         let data = res.records.location;
-        console.log('place', data[21].weatherElement[0].time[0].startTime);
-        console.log('place澎湖', data[19].weatherElement[2].time[0].parameter);
-        console.log('place澎湖', data[19].weatherElement[4].time[0].parameter);
-        console.log('place連江', data[21].weatherElement[2].time[0].parameter);
-        console.log('place連江', data[21].weatherElement[4].time[0].parameter);
-        console.log(res);
+     
         $.each(res.records.location, function (key, value) {
           // console.log('key',key);
           $("tbody").append(`<tr>

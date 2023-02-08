@@ -20,8 +20,10 @@
     text-align: center;
     color: #797982;
 }
-.net{
-    position: absolute;
+.btn_bar{
+    position: relative;
+    left: 100px;
+   
 }
 
 

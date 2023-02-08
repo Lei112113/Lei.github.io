@@ -28,6 +28,14 @@
 
 }
 
+.art_con,
+.web_con,
+.school {
+    height: 70vh;
+    margin-top: 200px;
+}
+
+
 
 
 @media only screen and (max-width:760px) {
@@ -40,9 +48,7 @@
 
 
     }
-}
 
-@media only screen and (max-width: 760px) {
     .picture2 {
         position: relative;
         background: url(https://picsum.photos/id/302/2000/1000) no-repeat;
@@ -51,10 +57,8 @@
         color: #797982;
 
     }
-}
 
 
-@media only screen and (max-width:760px) {
     .picture3 {
         position: relative;
         background: url(https://picsum.photos/id/10/2000/1000) no-repeat;
@@ -63,25 +67,33 @@
         text-align: center;
 
     }
-}
 
-@media only screen and (max-width:760px) {
+
     .schedule {
 
         width: 100vw;
 
     }
+
+
+    .net_container,
+    .art_container {
+
+        margin-left: -28px;
+    }
+
+    .art_con,
+    .web_con
+    {
+    height: 32vh;
+    /* margin-top: -100px; */
 }
 
-@media only screen and (max-width:760px) {
-    .net_container {
-
-        margin-left: -28px;
-    }
-
-    .art_container {
-        margin-left: -28px;
-
-    }
-
+.school {
+    height: 20vh;
+    margin-top: -20px;
+}
+.btn{
+    margin-bottom: 10px;
+}
 }

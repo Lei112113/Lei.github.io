@@ -1,11 +1,12 @@
-.picture1{
+.picture1 {
     position: relative;
     background: url(https://picsum.photos/id/14/2000/1000) no-repeat;
-    
+
     font-size: 60px;
     text-align: end;
 }
-.picture2{
+
+.picture2 {
     position: relative;
     background: url(https://picsum.photos/id/302/2000/1000) no-repeat;
     font-size: 50px;
@@ -13,70 +14,74 @@
     color: #797982;
 }
 
-.picture3{
+.picture3 {
     position: relative;
     background: url(https://picsum.photos/id/10/2000/1000) no-repeat;
     font-size: 50px;
     text-align: center;
     color: #797982;
 }
-.btn_bar{
+
+.btn_bar {
     position: relative;
     left: 100px;
-   
+
 }
 
 
 
-@media only screen and (max-width:760px){
-    .picture1{
+@media only screen and (max-width:760px) {
+    .picture1 {
         position: relative;
         background: url(https://picsum.photos/id/14/2000/1000) no-repeat;
-        
+
         font-size: 28px;
         text-align: end;
-        
-        
+
+
     }
 }
 
 @media only screen and (max-width: 760px) {
-    .picture2{
+    .picture2 {
         position: relative;
         background: url(https://picsum.photos/id/302/2000/1000) no-repeat;
         font-size: 30px;
         text-align: end;
         color: #797982;
-        
+
     }
-  }
+}
 
 
-  @media only screen and (max-width:760px){
-    .picture3{
+@media only screen and (max-width:760px) {
+    .picture3 {
         position: relative;
         background: url(https://picsum.photos/id/10/2000/1000) no-repeat;
-        
+
         font-size: 40px;
         text-align: center;
 
     }
-  }
-  @media only screen and (max-width:760px){
-    .schedule{
-        
+}
+
+@media only screen and (max-width:760px) {
+    .schedule {
+
         width: 100vw;
-        
+
     }
 }
 
-@media only screen and (max-width:760px){
-    .net_container{
-        
-margin-left: -28px;        
+@media only screen and (max-width:760px) {
+    .net_container {
+
+        margin-left: -28px;
     }
-    .art_container{
-margin-left: -116px;        
+
+    .art_container {
+        margin-left: -28px;
 
     }
+
 }
